@@ -10,7 +10,7 @@ const {
 } = refs.formEl;
 
 function createPromise(position, delay) {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     setInterval(() => {
       const shouldResolve = Math.random() > 0.3;
     if (shouldResolve) {
@@ -18,8 +18,9 @@ function createPromise(position, delay) {
   } else {
     reject({ position, delay });
   }
-  })  
-}, delay)
+  }, delay);
+});
+return promise;
 };
 
 refs.formEl.addEventListener('submit', handleSubmitForm);
