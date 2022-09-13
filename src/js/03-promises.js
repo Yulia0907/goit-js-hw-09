@@ -11,8 +11,9 @@ const {
 
 function createPromise(position, delay) {
   const promise = new Promise((resolve, reject) => {
-    setInterval(() => {
-      const shouldResolve = Math.random() > 0.3;
+     const shouldResolve = Math.random() > 0.3;
+
+setInterval(() => {  
     if (shouldResolve) {
       resolve({ position, delay });
   } else {
